@@ -1,0 +1,71 @@
+/**
+*
+* Testing
+*
+**/
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=Ubuntu:wght@300;400;500;700&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-all {
+  position: relative;
+  background-color: #28282B;
+  top: 200px;
+  text-align: center;
+  font-family: ubuntu;
+  color: #f5f0f0;
+  padding-top: 2%;
+}
+
+.footer-all .logo {
+  text-align: center;
+  width: 100%;
+}
+
+.footer-all .differences {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  text-align: justify;
+}
+@media (max-width: 500px) {
+  .footer-all .differences {
+    display: block;
+    text-align: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .foot {
+    margin-bottom: 20px;
+  }
+}
+
+.footer-all #cby {
+  margin-top: 20px;
+  padding-bottom: 5px;
+}
+
+.footer-all .follow img {
+  width: 30px;
+  margin: 10px 2px;
+  transition: 0.5s;
+}
+
+.footer-all .follow img:hover {
+  transform: scale(1.1);
+}
+
+.footer-all p {
+  padding-top: 10px;
+  transition: 0.5s;
+}
+
+.footer-all p:hover {
+  transform: scale(1.01);
+  color: #6060eb;
+  cursor: pointer;
+}

@@ -1,0 +1,156 @@
+@import "./utilities/breakpoints";
+@import "./utilities/mixins";
+@import "./utilities/colors";
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=Ubuntu:wght@300;400;500;700&display=swap');
+
+.Navbar{
+    z-index: 11;
+    position: fixed;
+   // background-color: #6060eb3f;
+     @include size(100%,11%);
+     display:flex;
+     justify-content: space-around;
+     align-items: center;
+     border: white;
+     
+}
+.logo{
+    width:10%;
+    height:35px;
+    @include media("<=623px"){
+        width: 20%;
+        height: 35px;
+     }
+}
+#logoImg{
+    @include size(100%,100%);
+    @include  position(relative,0 ,0,none,none);
+
+}
+
+.nav{
+    @include size(35%,40%);
+    @include  position(relative,0 ,0,none,none);
+    @include  flex(start);
+    @include media("<=900px"){
+        @include size(60%,40%);
+     }
+         @include media("<=623px"){
+         display: none;
+      }
+    
+}
+.nav ul {
+    display: flex;
+    list-style:none;
+    width:100%;
+    justify-content: space-evenly;
+}
+.nav ul li .same{
+    padding: 10px;
+    font-family: 'Ubuntu';
+    font-weight: 500;
+    cursor: pointer;
+    color:white;
+    transition: 0.3s;
+    position: relative;
+   
+}
+.nav ul li .same:hover{
+   color:$secondary;
+   text-decoration: none;
+}
+.nav ul li .same::after{
+    content: "";
+    @include size(75%,2px);
+    @include  position(absolute,none ,10px,none,5px);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.2s ease-out;
+    background-color: white; 
+  
+}
+.nav ul li .same:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+    @include size(75%,2px);
+  }
+
+.companyName{
+    
+    position: relative;
+    .companyLOGONAME{
+        @include flex(space-around)
+    }
+    &:hover .company-options{
+        visibility: visible
+    }
+     
+    .logocompany{
+          width: 40px;
+          border-radius: 50%;
+          margin: 5%;
+    }
+}
+.company-options{
+    border-radius: 12px;
+    overflow: hidden;
+    visibility: hidden;
+    @include position(absolute,100%,-25%);
+    @include flex();
+    flex-direction: column;
+    height: auto;
+    width: 200px;
+    background-color: lighten($main,14%);
+    a{
+        text-decoration: none;
+        list-style: none;
+        width: 100%;
+        color: white;
+    }
+    div{
+        text-shadow: 2px 2px 10px black;
+        overflow: hidden;
+        @include size(100%,none); 
+        @include flex(space-between);
+        min-height: 35px;
+        padding: 0% 4%;
+        @include border(1px,white,none);
+        @include font(medium);
+        transition: box-shadow 0.7s;
+        &:hover{
+          box-shadow: inset 200px 0 15px 15px $main;
+        }
+      
+    }
+}
+.sign{
+    display: flex;
+    @include size(20%,35px);
+    justify-content: space-between;
+    @include media("<=623px"){
+        width: 40%;
+     }
+  }
+
+.btnSignUp:hover,.sign .login:hover{
+    border:1px solid $secondary ;
+    color:$secondary;
+}
+.sign .login ,  .btnSignUp {
+    text-decoration: none;
+    position: relative;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+    align-items: center;
+    display: flex;
+    border:1px solid white;
+    color: white;
+    @include font('Ubuntu');
+    @include size(45%,35px);
+}
+.sign .login p, .sign .btnSignUp p{
+     margin: auto;
+}
